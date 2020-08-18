@@ -5,7 +5,7 @@ services:
     container_name: esphome  
     image: esphome/esphome
     restart: unless-stopped
-    user: "1000"
+    # user: "1000"
     #devices:
       #- /dev/ttyUSB0:/dev/ttyUSB0
     #environment:

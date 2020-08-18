@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Start a new file wizard for file livingroom.yaml
-docker run --rm -v "${PWD}":/config -it esphome/esphome $1 wizard
+#docker run --rm -v "${PWD}":/config -it esphome/esphome $1 wizard
 
 # Compile and upload livingroom.yaml
 #docker run --rm -v "${PWD}":/config -it esphome/esphome livingroom.yaml run
@@ -18,3 +18,5 @@ docker run --rm -v "${PWD}":/config -it esphome/esphome $1 wizard
 # Setup a bash alias:
 #alias esphome='docker run --rm -v "${PWD}":/config --net=host -it esphome/esphome'
 
+
+docker run --rm -v "${PWD}":/config -it esphome/esphome $*

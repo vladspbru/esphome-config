@@ -1,6 +1,6 @@
 substitutions:
   devicename:   controlpad
-  upper_devicename: Control Pad
+  upper_devicename: ControlPad
   ip_address: "192.168.2.88"
     
 esphome:
@@ -10,10 +10,16 @@ esphome:
 
 <<: !include common/common.yaml
 
+sensor:
+  - platform: uptime
+    name: $upper_devicename Uptime
+  - platform: wifi_signal
+    name: $upper_devicename WiFi
+
 binary_sensor:
   - platform: gpio
-    name: "gpio23"
-    pin: GPIO23
+    name: "gpio21"
+    pin: GPIO21
     
   - platform: gpio
     name: "gpio23"
