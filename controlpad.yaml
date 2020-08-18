@@ -1,33 +1,20 @@
+substitutions:
+  devicename:   controlpad
+  upper_devicename: Control Pad
+  ip_address: "192.168.2.88"
+    
 esphome:
-  name: controlpad
+  name: $devicename
   platform: ESP32
   board: esp32-evb
 
-wifi:
-  networks:
-  - ssid: !secret wifi_ssid 
-    password: !secret wifi_password 
-  - ssid: !secret wifi2_ssid 
-    password: !secret wifi2_password 
+<<: !include common/common.yaml
 
-  # Enable fallback hotspot (captive portal) in case wifi connection fails
-  ap:
-    ssid: "ControlpadFB"
-    password: "123459876"
-        
-  manual_ip:
-    static_ip: 192.168.2.88
-    gateway: 192.168.2.1
-    subnet: 255.255.255.0
+binary_sensor:
+  - platform: gpio
+    name: "gpio23"
+    pin: GPIO23
     
-captive_portal:
-
-# Enable logging
-logger:
-
-# Enable Home Assistant API
-api:
-  password: "garden61"
-
-ota:
-  password: "garden61"
+  - platform: gpio
+    name: "gpio23"
+    pin: GPIO23
