@@ -1,0 +1,27 @@
+substitutions:
+  devicename: esp01
+  upper_devicename: ESP-01
+  ip_address: "192.168.2.89"
+    
+esphome:
+  name: $devicename
+  platform: ESP8266
+  board: esp01
+
+<<: !include common/common.yaml
+
+sensor:
+  - platform: uptime
+    name: $upper_devicename Uptime
+  - platform: wifi_signal
+    name: $upper_devicename WiFi
+
+binary_sensor:
+  - platform: gpio
+    name: "gpio_0"
+    pin: GPIO0
+
+switch:    
+  - platform: gpio
+    name: "led"
+    pin: GPIO1

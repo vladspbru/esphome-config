@@ -7,12 +7,12 @@ wifi:
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "ControlpadFB"
+    ssid: ${devicename}_FB
     password: "123459876"
         
   manual_ip:
     static_ip: $ip_address
-    gateway: 192.168.2.1
+    gateway: 192.168.2.2
     subnet: 255.255.255.0
     
 captive_portal:
